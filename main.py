@@ -1,20 +1,26 @@
-#Polymorphism
-class User():
-    def Sign_In(self):
-        print('Logged In')
+#Polymorphism 
+#Overloading
+#OverRiding
 
-class Lizard(User):
-    pass
-class Archer(User):
-    pass
+class A():
+    def Area(self, a=None, b=None):
+        if(a!=None and b!=None):
+            print(a*b)
+        elif(a!=None):
+            print(a*a)
+        else:
+            print("Nothing to find")
 
-Archer1 = Archer()
-Archer1.Sign_In()
+class B(A):
+    def Area(self):
+        super().Area() #To call function form parent class
+        print("Area form B")
 
-#isinstance(instance , class)
+objA = A()
+  
+objA.Area() #Overloading
+objA.Area(10) #Overloading
+objA.Area(10,20) #Overloading
 
-print(isinstance(Archer1, Archer))
-
-print(isinstance(Archer1, User))
-
-print(isinstance(Archer1, object)) # Object by default is parent class for all the class in python
+objB = B()
+objB.Area()
