@@ -1,15 +1,19 @@
-#Abstraction
-# class player: #Class
-#     membership = True #Class Attribute
-#     def __init__(self, name='Tayyab', age=20): #Constructor
-#         if(player.membership):
-#             self.name = name #Attribute
-#             self.age = age #Attribute
+#Public and private
+#@property @name.setter decorator for protected
+#__ for private variable, method and class
+class player: #Class
+    __membership = True # Private Class Attribute
+    def __init__(self, name='Tayyab', age=20): #Constructor
+        if(player.__membership):
 
-#     def info(self): #Method
-#         print(f'Player {self.name} has age of {self.age}')
+            self._name = name #Attribute
+            self._age = age #Attribute
 
+    def __info(self): #Method
+        print(f'Player {self._name} has age of {self._age}')
 
-tup1 = (1,2,3,1,1,4,5,6)
+pl1 = player()
+pl1._age = 33
 
-print(tup1.count(1)) #.count working is abstracted form us
+print(pl1.info())
+
